@@ -291,43 +291,46 @@ img, svg { display: block; }
   color: var(--faint); margin-bottom: 10px;
 }
 
-/* Tech bubble cloud */
-.tech-bubble-wrap {
-  position: relative;
-  height: 340px;
-  width: 100%;
+/* Tech grid — masonry con nombre */
+.tech-grid {
+  columns: 3;
+  column-gap: 14px;
 }
-.tech-bubble {
-  position: absolute;
-  width: var(--s);
-  height: var(--s);
-  left: var(--x);
-  top: var(--y);
+.tech-card {
+  break-inside: avoid;
+  margin-bottom: 14px;
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 22%;
-  display: grid;
-  place-items: center;
-  box-shadow: 0 4px 18px rgba(0,0,0,.18);
-  transition: transform .25s var(--ease-spring), box-shadow .25s var(--ease), border-color .2s var(--ease);
-  cursor: default;
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 24px 16px;
+  transition: transform .25s var(--ease-spring), border-color .2s var(--ease), box-shadow .25s var(--ease);
 }
-.tech-bubble:hover {
-  transform: translateY(-6px) scale(1.1);
+/* alturas escalonadas tipo masonry */
+.tech-card:nth-child(3n+1) { padding-block: 30px; }
+.tech-card:nth-child(3n+2) { padding-block: 22px; }
+.tech-card:nth-child(3n)   { padding-block: 38px; }
+.tech-card:hover {
+  transform: translateY(-4px);
   border-color: var(--accent);
-  box-shadow: 0 10px 30px var(--accent-glow);
-  z-index: 2;
+  box-shadow: var(--shadow), 0 0 0 1px var(--accent-dim);
 }
-.tech-bubble svg, .tech-bubble img {
-  width: 58%;
-  height: 58%;
+.tech-card svg {
+  width: 42px;
+  height: 42px;
   display: block;
-  object-fit: contain;
 }
-[data-theme="light"] .tech-bubble {
-  background: #fff;
-  box-shadow: 0 4px 18px rgba(0,0,0,.10);
+.tech-card span {
+  font-size: .82rem;
+  font-weight: 500;
+  color: var(--muted);
+  transition: color .2s var(--ease);
 }
+.tech-card:hover span { color: var(--fg); }
 .tags { display: flex; flex-wrap: wrap; gap: 7px; }
 .tag {
   font-size: .8rem; font-weight: 500; padding: 5px 12px;
@@ -424,6 +427,7 @@ img, svg { display: block; }
   .nav-links, .nav-name { display: none; }
   .nav-burger { display: flex; }
   .about-grid { grid-template-columns: 1fr; gap: 36px; }
+  .tech-grid { columns: 3; }
   .project-grid { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
   .exp-item { grid-template-columns: 1fr; gap: 6px; }
