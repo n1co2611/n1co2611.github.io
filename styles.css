@@ -291,46 +291,60 @@ img, svg { display: block; }
   color: var(--faint); margin-bottom: 10px;
 }
 
-/* Tech grid — masonry con nombre */
-.tech-grid {
-  columns: 3;
-  column-gap: 14px;
+/* Hex honeycomb — iconos redondos estilo Apple Watch */
+.hex-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px 10px;
+  padding-top: 8px;
 }
-.tech-card {
-  break-inside: avoid;
-  margin-bottom: 14px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
+/* filas escalonadas: cada 3er item (col central de filas alternas) baja,
+   y desplazamos la 2ª fila para crear el panal */
+.hex-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 12px;
-  padding: 24px 16px;
-  transition: transform .25s var(--ease-spring), border-color .2s var(--ease), box-shadow .25s var(--ease);
+  gap: 10px;
 }
-/* alturas escalonadas tipo masonry */
-.tech-card:nth-child(3n+1) { padding-block: 30px; }
-.tech-card:nth-child(3n+2) { padding-block: 22px; }
-.tech-card:nth-child(3n)   { padding-block: 38px; }
-.tech-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--accent);
-  box-shadow: var(--shadow), 0 0 0 1px var(--accent-dim);
+/* desplazamiento tipo colmena: items 4-6 (2ª fila) medio hueco a la derecha */
+.hex-item:nth-child(4) { transform: translateX(50%); }
+.hex-item:nth-child(5) { transform: translateX(50%); }
+.hex-item:nth-child(6) { transform: translateX(50%); }
+/* 3ª fila vuelve a la izquierda; 4ª fila desplazada de nuevo */
+.hex-item:nth-child(10) { transform: translateX(50%); }
+
+.hex-circle {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  display: grid;
+  place-items: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,.22);
+  transition: transform .28s var(--ease-spring), border-color .2s var(--ease), box-shadow .28s var(--ease);
 }
-.tech-card svg {
-  width: 42px;
-  height: 42px;
+.hex-item svg {
+  width: 40px;
+  height: 40px;
   display: block;
 }
-.tech-card span {
-  font-size: .82rem;
+.hex-item span {
+  font-size: .78rem;
   font-weight: 500;
   color: var(--muted);
   transition: color .2s var(--ease);
 }
-.tech-card:hover span { color: var(--fg); }
+.hex-item:hover .hex-circle {
+  transform: translateY(-6px) scale(1.08);
+  border-color: var(--accent);
+  box-shadow: 0 12px 30px var(--accent-glow);
+}
+.hex-item:hover span { color: var(--fg); }
+[data-theme="light"] .hex-circle {
+  background: #fff;
+  box-shadow: 0 6px 20px rgba(0,0,0,.10);
+}
 .tags { display: flex; flex-wrap: wrap; gap: 7px; }
 .tag {
   font-size: .8rem; font-weight: 500; padding: 5px 12px;
