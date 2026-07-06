@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nicolás Hidalgo — Desarrollador Full-Stack</title>
+<meta name="description" content="Portfolio de Nicolás Hidalgo Salinas, desarrollador full-stack. Angular, Ionic, Firebase, TypeScript y sistemas mainframe.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2318181b'/%3E%3Ctext x='16' y='22' font-family='Inter,sans-serif' font-size='14' font-weight='700' fill='%23fafafa' text-anchor='middle'%3ENH%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Saltar al contenido</a>
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-logo" aria-label="Inicio">
+      <span class="nav-mono">NH</span>
+      <span class="nav-name">Nicolás Hidalgo</span>
+    </a>
+
+    <nav class="nav-links" aria-label="Navegación principal">
+      <a href="#about" data-i18n="nav.about">Sobre mí</a>
+      <a href="#experience" data-i18n="nav.experience">Experiencia</a>
+      <a href="#projects" data-i18n="nav.projects">Proyectos</a>
+      <a href="#certificates" data-i18n="nav.certificates">Certificados</a>
+      <a href="#contact" data-i18n="nav.contact">Contacto</a>
+    </nav>
+
+    <div class="nav-controls">
+      <button id="lang-toggle" class="ctrl-btn" type="button" aria-label="Cambiar idioma">
+        <span data-lang-label>EN</span>
+      </button>
+      <button id="theme-toggle" class="ctrl-btn icon-btn" type="button" aria-label="Cambiar tema claro/oscuro">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <button id="nav-toggle" class="ctrl-btn icon-btn nav-burger" type="button" aria-label="Abrir menú" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+  <nav class="nav-links-mobile" id="nav-links-mobile" aria-label="Navegación móvil">
+    <a href="#about" data-i18n="nav.about">Sobre mí</a>
+    <a href="#experience" data-i18n="nav.experience">Experiencia</a>
+    <a href="#projects" data-i18n="nav.projects">Proyectos</a>
+    <a href="#certificates" data-i18n="nav.certificates">Certificados</a>
+    <a href="#contact" data-i18n="nav.contact">Contacto</a>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="hero-inner">
+      <div class="avatar" aria-hidden="true">NH</div>
+      <h1 class="hero-title">Nicolás Hidalgo <span class="hero-title-dim">Salinas</span></h1>
+      <p class="hero-role" data-i18n="hero.role">Desarrollador Full-Stack · Ingeniería Multimedia</p>
+      <p class="hero-tagline" data-i18n="hero.tagline">
+        Desarrollo aplicaciones web y móviles con Angular, Ionic y Firebase. Estudiante de último curso en la Universidad de Alicante, con experiencia también en sistemas mainframe.
+      </p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary" data-i18n="hero.cta_projects">Ver proyectos</a>
+        <a href="#contact" class="btn btn-outline" data-i18n="hero.cta_contact">Contactar</a>
+      </div>
+      <div class="hero-socials">
+        <a href="https://github.com/n1co2611" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.4 7.86 10.93.57.1.78-.25.78-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.35-3.88-1.35-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.25 3.33.95.1-.74.4-1.25.72-1.53-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.16 1.18a10.9 10.9 0 0 1 5.75 0c2.2-1.49 3.16-1.18 3.16-1.18.62 1.58.23 2.75.11 3.04.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.41-5.25 5.69.41.36.78 1.08.78 2.17 0 1.57-.01 2.83-.01 3.22 0 .3.21.66.79.55A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/nicolashidalgosalinas" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.44-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.11 20.45H3.56V9h3.55v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>
+        </a>
+        <a href="mailto:nicolashidalgo2611@gmail.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="section-inner">
+      <p class="eyebrow" data-i18n="about.eyebrow">Perfil</p>
+      <h2 class="section-title" data-i18n="about.title">Sobre mí</h2>
+
+      <div class="about-grid">
+        <div class="about-copy">
+          <p data-i18n="about.p1">Soy estudiante de último año de Ingeniería Multimedia en la Universidad de Alicante, con un perfil full-stack centrado en aplicaciones web y móviles interactivas.</p>
+          <p data-i18n="about.p2">Trabajo sobre todo con Angular, Ionic, Firebase y TypeScript, y complemento el desarrollo moderno con experiencia real en sistemas mainframe (COBOL, JCL, DB2). Esa combinación me da una visión completa del software: desde la interfaz que usa la persona hasta los procesos que sostienen sistemas críticos.</p>
+          <p data-i18n="about.p3">Me interesan especialmente la integración de IA en producto, el diseño de interfaces cuidadas y construir proyectos de principio a fin, de la idea al despliegue.</p>
+        </div>
+
+        <div class="skills-card">
+          <div class="skill-group">
+            <p class="skill-group-label" data-i18n="about.skills.frontend">Frontend &amp; Móvil</p>
+            <div class="tags">
+              <span class="tag">Angular</span><span class="tag">Ionic</span><span class="tag">React</span>
+              <span class="tag">TypeScript</span><span class="tag">JavaScript</span><span class="tag">Three.js</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <p class="skill-group-label" data-i18n="about.skills.backend">Backend &amp; Datos</p>
+            <div class="tags">
+              <span class="tag">Node.js</span><span class="tag">Firebase</span><span class="tag">MongoDB</span><span class="tag">PHP</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <p class="skill-group-label" data-i18n="about.skills.mainframe">Mainframe</p>
+            <div class="tags">
+              <span class="tag">COBOL</span><span class="tag">JCL</span><span class="tag">DB2</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <p class="skill-group-label" data-i18n="about.skills.langs">Lenguajes</p>
+            <div class="tags">
+              <span class="tag">Java</span><span class="tag">C</span><span class="tag">C++</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <p class="skill-group-label" data-i18n="about.skills.ai">IA &amp; Herramientas</p>
+            <div class="tags">
+              <span class="tag">Dialogflow</span><span class="tag">Integración LLM</span><span class="tag">Git</span><span class="tag">Figma</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="section" id="experience">
+    <div class="section-inner">
+      <p class="eyebrow" data-i18n="exp.eyebrow">Trayectoria</p>
+      <h2 class="section-title" data-i18n="exp.title">Experiencia y formación</h2>
+
+      <div class="exp-list">
+        <article class="exp-item">
+          <div class="exp-date" data-i18n="exp.ntt.date">Abr 2026 — Jul 2026</div>
+          <div class="exp-body">
+            <h3 class="exp-role" data-i18n="exp.ntt.role">Prácticas — Sistemas Mainframe</h3>
+            <p class="exp-org">NTT Data · Alicante</p>
+            <p class="exp-desc" data-i18n="exp.ntt.desc">Desarrollo y mantenimiento de programas COBOL y procesos batch con JCL en un equipo de sistemas, trabajando sobre infraestructura mainframe.</p>
+            <div class="tags tags-sm">
+              <span class="tag">COBOL</span><span class="tag">JCL</span><span class="tag">Mainframe</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="exp-item">
+          <div class="exp-date" data-i18n="exp.uni.date">2022 — Actualidad</div>
+          <div class="exp-body">
+            <h3 class="exp-role" data-i18n="exp.uni.role">Grado en Ingeniería Multimedia</h3>
+            <p class="exp-org">Universidad de Alicante</p>
+            <p class="exp-desc" data-i18n="exp.uni.desc">Desarrollo web y móvil, entornos gráficos e interactivos, bases de datos y diseño UX/UI. Trabajo de Fin de Grado: CarGest, una aplicación de gestión de vehículos.</p>
+            <div class="tags tags-sm">
+              <span class="tag">Angular</span><span class="tag">Ionic</span><span class="tag">Firebase</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section" id="projects">
+    <div class="section-inner">
+      <p class="eyebrow" data-i18n="proj.eyebrow">Trabajo</p>
+      <h2 class="section-title" data-i18n="proj.title">Proyectos</h2>
+      <p class="section-subtitle" data-i18n="proj.subtitle">Una selección de los proyectos en los que he trabajado.</p>
+
+      <div class="project-grid">
+        <article class="project-card">
+          <div class="project-card-head">
+            <h3>Noma</h3>
+            <span class="status-pill status-live" data-i18n="proj.status.live">Publicado</span>
+          </div>
+          <p data-i18n="proj.noma.desc">Plataforma digital para descubrir productos artesanales de proximidad. Presenta productos con distintivos de calidad (DO, DOP, IGP) sobre un mapa interactivo y ayuda a encontrarlos mediante un asistente conversacional, con un enfoque cuidado en SEO y rendimiento.</p>
+          <div class="tags tags-sm">
+            <span class="tag">Dialogflow</span><span class="tag">SEO</span><span class="tag">Conversational UX</span>
+          </div>
+          <div class="project-card-links">
+            <a href="https://noma.ovh" target="_blank" rel="noopener noreferrer" data-i18n="proj.link.noma">Ver NOMA →</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-card-head">
+            <h3>EpicBox</h3>
+            <span class="status-pill status-live" data-i18n="proj.status.live">Publicado</span>
+          </div>
+          <p data-i18n="proj.epicbox.desc">Marketplace de recursos digitales para creadores: modelos 3D y 2D, scripts, packs y efectos. Incluye catálogo por categorías, cuentas de usuario y carrito de compra.</p>
+          <div class="tags tags-sm">
+            <span class="tag">React</span><span class="tag">Node.js</span><span class="tag">MongoDB</span>
+          </div>
+          <div class="project-card-links">
+            <a href="https://github.com/SansitoV2/UA-PROYECTO" target="_blank" rel="noopener noreferrer" data-i18n="proj.link.github">Ver en GitHub →</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-card-head">
+            <h3>CarGest</h3>
+            <span class="status-pill status-progress" data-i18n="proj.status.progress">En desarrollo</span>
+          </div>
+          <p data-i18n="proj.cargest.desc">Aplicación móvil para la gestión de vehículos: permite llevar el control de cada vehículo, su documentación y sus mantenimientos desde un mismo sitio. Es mi Trabajo de Fin de Grado, actualmente en desarrollo.</p>
+          <div class="tags tags-sm">
+            <span class="tag">Ionic</span><span class="tag">Angular</span><span class="tag">Firebase</span>
+          </div>
+          <div class="project-card-links">
+            <span class="link-disabled" data-i18n="proj.link.soon">Disponible próximamente</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATES -->
+  <section class="section" id="certificates">
+    <div class="section-inner">
+      <p class="eyebrow" data-i18n="cert.eyebrow">Formación continua</p>
+      <h2 class="section-title" data-i18n="cert.title">Certificados</h2>
+
+      <div class="empty-state">
+        <div class="empty-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/><circle cx="12" cy="8" r="6"/></svg>
+        </div>
+        <p class="empty-title" data-i18n="cert.empty.title">Aún no hay certificados publicados</p>
+        <p class="empty-desc" data-i18n="cert.empty.desc">Iré añadiendo aquí las certificaciones que complete, como cursos de LinkedIn Learning o mi nivel de inglés.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="section-inner">
+      <p class="eyebrow" data-i18n="contact.eyebrow">Contacto</p>
+      <h2 class="section-title" data-i18n="contact.title">Hablemos</h2>
+      <p class="section-subtitle" data-i18n="contact.subtitle">Estoy abierto a oportunidades y colaboraciones. Puedes escribirme por cualquiera de estos canales.</p>
+
+      <div class="contact-grid">
+        <a class="contact-card" href="mailto:nicolashidalgo2611@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          <div>
+            <p class="contact-card-label">Email</p>
+            <p class="contact-card-value">nicolashidalgo2611@gmail.com</p>
+          </div>
+        </a>
+        <a class="contact-card" href="https://www.linkedin.com/in/nicolashidalgosalinas" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.44-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.11 20.45H3.56V9h3.55v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>
+          <div>
+            <p class="contact-card-label">LinkedIn</p>
+            <p class="contact-card-value">/in/nicolashidalgosalinas</p>
+          </div>
+        </a>
+        <a class="contact-card" href="https://github.com/n1co2611" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.4 7.86 10.93.57.1.78-.25.78-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.35-3.88-1.35-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.25 3.33.95.1-.74.4-1.25.72-1.53-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.16 1.18a10.9 10.9 0 0 1 5.75 0c2.2-1.49 3.16-1.18 3.16-1.18.62 1.58.23 2.75.11 3.04.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.41-5.25 5.69.41.36.78 1.08.78 2.17 0 1.57-.01 2.83-.01 3.22 0 .3.21.66.79.55A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+          <div>
+            <p class="contact-card-label">GitHub</p>
+            <p class="contact-card-value">n1co2611</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>© <span id="year"></span> Nicolás Hidalgo Salinas</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
