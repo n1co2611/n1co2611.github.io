@@ -328,6 +328,7 @@ img, svg { display: block; }
 .project-img::after {
   content: ""; position: absolute; inset: 0;
   background: linear-gradient(to bottom, transparent 50%, var(--surface) 100%);
+  pointer-events: none;
 }
 
 .project-card-body { padding: 20px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
@@ -391,4 +392,101 @@ img, svg { display: block; }
 @media (max-width: 520px) {
   .section { padding: 72px 20px; }
   .hero { padding: 40px 20px 68px; }
+}
+
+/* ============================================================
+   CONTACT — formulario + canales
+   ============================================================ */
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 32px;
+  align-items: start;
+}
+
+/* Formulario */
+.contact-form-wrap {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px;
+}
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-field { display: flex; flex-direction: column; gap: 7px; margin-bottom: 16px; }
+.form-field:last-of-type { margin-bottom: 20px; }
+.form-field label {
+  font-size: .82rem; font-weight: 600; color: var(--muted);
+  letter-spacing: .01em;
+}
+.form-field input,
+.form-field textarea {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--fg);
+  font-family: inherit;
+  font-size: .95rem;
+  padding: 11px 14px;
+  outline: none;
+  transition: border-color .18s var(--ease), box-shadow .18s var(--ease);
+  resize: none;
+  width: 100%;
+}
+.form-field input::placeholder,
+.form-field textarea::placeholder { color: var(--faint); }
+.form-field input:focus,
+.form-field textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-dim);
+}
+.form-field input:invalid:not(:placeholder-shown),
+.form-field textarea:invalid:not(:placeholder-shown) {
+  border-color: #ef4444;
+}
+
+.btn-submit {
+  width: 100%;
+  justify-content: center;
+  gap: 9px;
+}
+.btn-submit .btn-icon { width: 16px; height: 16px; }
+.btn-submit:disabled { opacity: .6; cursor: not-allowed; transform: none !important; }
+
+.form-success {
+  display: none;
+  margin-top: 14px;
+  padding: 12px 16px;
+  background: var(--live-bg);
+  color: var(--live);
+  border-radius: var(--radius-sm);
+  font-size: .9rem;
+  font-weight: 500;
+  text-align: center;
+}
+.form-error {
+  display: none;
+  margin-top: 14px;
+  padding: 12px 16px;
+  background: rgba(239,68,68,.12);
+  color: #f87171;
+  border-radius: var(--radius-sm);
+  font-size: .9rem;
+  font-weight: 500;
+  text-align: center;
+}
+.form-success.show,
+.form-error.show { display: block; }
+
+/* Canales laterales */
+.contact-side {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.contact-side .contact-card { flex-direction: row; }
+
+@media (max-width: 820px) {
+  .contact-layout { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .contact-side { flex-direction: column; }
 }

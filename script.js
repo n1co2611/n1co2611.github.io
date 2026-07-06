@@ -30,6 +30,12 @@ const I18N = {
     "cert.eyebrow":"Formación continua","cert.title":"Certificados",
     "cert.empty.title":"Aún no hay certificados publicados",
     "cert.empty.desc":"Iré añadiendo aquí las certificaciones que complete, como cursos de LinkedIn Learning o mi nivel de inglés.",
+    "form.name":"Nombre","form.email":"Email","form.subject":"Asunto","form.message":"Mensaje",
+    "form.name_ph":"Tu nombre","form.email_ph":"tu@email.com",
+    "form.subject_ph":"¿En qué puedo ayudarte?","form.message_ph":"Cuéntame más...",
+    "form.send":"Enviar mensaje","form.sending":"Enviando...",
+    "form.success":"¡Mensaje enviado! Te responderé pronto.",
+    "form.error":"Algo fue mal. Inténtalo de nuevo o escríbeme directamente.",
     "contact.eyebrow":"Contacto","contact.title":"Hablemos",
     "contact.subtitle":"Estoy abierto a oportunidades y colaboraciones. Puedes escribirme por cualquiera de estos canales."
   },
@@ -57,6 +63,12 @@ const I18N = {
     "cert.eyebrow":"Continuous learning","cert.title":"Certificates",
     "cert.empty.title":"No certificates published yet",
     "cert.empty.desc":"I'll add the certifications I complete here, such as LinkedIn Learning courses or my English level.",
+    "form.name":"Name","form.email":"Email","form.subject":"Subject","form.message":"Message",
+    "form.name_ph":"Your name","form.email_ph":"you@email.com",
+    "form.subject_ph":"How can I help?","form.message_ph":"Tell me more...",
+    "form.send":"Send message","form.sending":"Sending...",
+    "form.success":"Message sent! I'll get back to you soon.",
+    "form.error":"Something went wrong. Try again or write to me directly.",
     "contact.eyebrow":"Contact","contact.title":"Let's talk",
     "contact.subtitle":"I'm open to opportunities and collaborations. Reach me through any of these channels."
   }
@@ -70,6 +82,10 @@ function applyI18n(l) {
   document.querySelectorAll("[data-i18n]").forEach(el => {
     const v = I18N[l][el.getAttribute("data-i18n")];
     if (v) el.textContent = v;
+  });
+  document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
+    const v = I18N[l][el.getAttribute("data-i18n-placeholder")];
+    if (v) el.placeholder = v;
   });
   document.querySelector("[data-lang-label]").textContent = l === "es" ? "EN" : "ES";
 }
@@ -113,6 +129,44 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
 
 document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+
+
+// Contact form — Formspree
+const contactForm = document.getElementById("contact-form");
+if (contactForm) {
+  contactForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const btn = contactForm.querySelector(".btn-submit");
+    const label = contactForm.querySelector(".btn-label");
+    const successEl = document.getElementById("form-success");
+    const errorEl = document.getElementById("form-error");
+
+    // Reset
+    successEl.classList.remove("show");
+    errorEl.classList.remove("show");
+    btn.disabled = true;
+    label.textContent = I18N[lang]["form.sending"];
+
+    try {
+      const res = await fetch(contactForm.action, {
+        method: "POST",
+        body: new FormData(contactForm),
+        headers: { Accept: "application/json" }
+      });
+      if (res.ok) {
+        successEl.classList.add("show");
+        contactForm.reset();
+      } else {
+        errorEl.classList.add("show");
+      }
+    } catch {
+      errorEl.classList.add("show");
+    } finally {
+      btn.disabled = false;
+      label.textContent = I18N[lang]["form.send"];
+    }
+  });
+}
 
 // Init
 applyTheme(theme);
