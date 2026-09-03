@@ -5,59 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nicolás Hidalgo — Desarrollador Full-Stack</title>
 <meta name="description" content="Portfolio de Nicolás Hidalgo Salinas, desarrollador full-stack. Angular, Ionic, Firebase, TypeScript y sistemas mainframe.">
-<meta name="author" content="Nicolás Hidalgo Salinas">
-
-<!-- Social sharing -->
-<meta property="og:type" content="website">
-<meta property="og:title" content="Nicolás Hidalgo — Desarrollador Full-Stack">
-<meta property="og:description" content="Aplicaciones web y móviles con Angular, Ionic y Firebase, con base en sistemas mainframe (COBOL, JCL, DB2).">
-<meta property="og:locale" content="es_ES">
-<meta property="og:locale:alternate" content="en_US">
-<meta name="twitter:card" content="summary">
-
-<!-- Theme color for browser chrome (kept in sync by JS) -->
-<meta name="theme-color" id="meta-theme-color" content="#131210">
-
-<!-- Resolve theme + language before first paint (no flash) -->
-<script>
-(function () {
-  var d = document.documentElement;
-  d.classList.add("js");
-  var theme = "dark";
-  try {
-    var stored = localStorage.getItem("theme");
-    if (stored === "dark" || stored === "light") {
-      theme = stored;
-    } else if (window.matchMedia("(prefers-color-scheme: light)").matches) {
-      theme = "light";
-    }
-    var lang = localStorage.getItem("lang");
-    if (lang === "es" || lang === "en") d.lang = lang;
-  } catch (e) {}
-  d.setAttribute("data-theme", theme);
-  var meta = document.getElementById("meta-theme-color");
-  if (meta) meta.content = theme === "light" ? "#f7f5f0" : "#131210";
-})();
-</script>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=Inter:wght@400..600&family=Schibsted+Grotesk:wght@600..700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;1,14..32,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23131210'/%3E%3Ctext x='16' y='21.5' font-family='monospace' font-size='13' font-weight='600' fill='%23d9a24a' text-anchor='middle'%3ENH%3C/text%3E%3C/svg%3E">
-<script src="script.js" defer></script>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2318181b'/%3E%3Ctext x='16' y='22' font-family='Inter,sans-serif' font-size='14' font-weight='700' fill='%23fafafa' text-anchor='middle'%3ENH%3C/text%3E%3C/svg%3E">
 </head>
 <body>
 
-<a class="skip-link" href="#main" data-i18n="a11y.skip">Saltar al contenido</a>
+<a class="skip-link" href="#main">Saltar al contenido</a>
 
 <header class="nav" id="nav">
   <div class="nav-inner">
-    <a href="#top" class="nav-logo" aria-label="Inicio" data-i18n-aria="a11y.home">
-      <span class="nav-mark" aria-hidden="true">NH</span>
+    <a href="#top" class="nav-logo" aria-label="Inicio">
+      <span class="nav-mono">NH</span>
       <span class="nav-name">Nicolás Hidalgo</span>
     </a>
-    <nav class="nav-links" aria-label="Navegación principal" data-i18n-aria="a11y.nav">
+    <nav class="nav-links" aria-label="Navegación principal">
       <a href="#about" data-i18n="nav.about">Sobre mí</a>
       <a href="#experience" data-i18n="nav.experience">Experiencia</a>
       <a href="#projects" data-i18n="nav.projects">Proyectos</a>
@@ -66,194 +30,197 @@
       <a href="#contact" data-i18n="nav.contact">Contacto</a>
     </nav>
     <div class="nav-controls">
-      <button id="lang-toggle" class="ctrl-btn" type="button" aria-label="Cambiar idioma a inglés"><span data-lang-label>EN</span></button>
-      <button id="theme-toggle" class="ctrl-btn" type="button" aria-label="Cambiar tema" data-i18n-aria="a11y.theme">
-        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <button id="lang-toggle" class="ctrl-btn" type="button" aria-label="Cambiar idioma"><span data-lang-label>EN</span></button>
+      <button id="theme-toggle" class="ctrl-btn icon-btn" type="button" aria-label="Cambiar tema">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
       </button>
-      <button id="nav-toggle" class="ctrl-btn nav-burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-mobile">
-        <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      <button id="nav-toggle" class="ctrl-btn icon-btn nav-burger" type="button" aria-label="Abrir menú" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
       </button>
     </div>
   </div>
-  <div class="nav-mobile" id="nav-mobile">
-    <div class="nav-mobile-inner">
-      <nav aria-label="Navegación móvil" data-i18n-aria="a11y.nav_mobile">
-        <a href="#about" data-i18n="nav.about">Sobre mí</a>
-        <a href="#experience" data-i18n="nav.experience">Experiencia</a>
-        <a href="#projects" data-i18n="nav.projects">Proyectos</a>
-        <!-- CERTIFICADOS: descomenta esta línea cuando publiques el primero -->
-        <!-- <a href="#certificates" data-i18n="nav.certificates">Certificados</a> -->
-        <a href="#contact" data-i18n="nav.contact">Contacto</a>
-      </nav>
-    </div>
-  </div>
+  <nav class="nav-links-mobile" id="nav-links-mobile" aria-label="Navegación móvil">
+    <a href="#about" data-i18n="nav.about">Sobre mí</a>
+    <a href="#experience" data-i18n="nav.experience">Experiencia</a>
+    <a href="#projects" data-i18n="nav.projects">Proyectos</a>
+    <!-- CERTIFICADOS: descomenta esta línea cuando publiques el primero -->
+    <!-- <a href="#certificates" data-i18n="nav.certificates">Certificados</a> -->
+    <a href="#contact" data-i18n="nav.contact">Contacto</a>
+  </nav>
 </header>
 
 <main id="main">
 
-  <!-- ============================== HERO ============================== -->
-  <section class="hero" id="top" aria-labelledby="hero-title">
+  <!-- HERO -->
+  <section class="hero" id="top">
     <div class="hero-inner">
       <div class="hero-text animate-hero-text">
-        <p class="hero-status">
-          <span data-i18n="hero.eyebrow">Desarrollador Full-Stack</span>
-          <span class="sep" aria-hidden="true">—</span>
-          <span class="hero-avail"><span class="dot" aria-hidden="true"></span><span data-i18n="hero.available">Abierto a oportunidades</span></span>
-        </p>
-        <h1 class="hero-title" id="hero-title">Nicolás<br>Hidalgo<span class="dot-accent">.</span></h1>
-        <p class="hero-tagline" data-i18n="hero.tagline">Construyo aplicaciones web y móviles con Angular, Ionic y Firebase. Con una base poco habitual: experiencia real en sistemas mainframe de NTT Data.</p>
+        <p class="eyebrow hero-eyebrow" data-i18n="hero.eyebrow">Desarrollador Full-Stack</p>
+        <h1 class="hero-title">Nicolás<br><span class="hero-title-accent">Hidalgo</span></h1>
+        <p class="hero-tagline" data-i18n="hero.tagline">Construyo aplicaciones web y móviles con Angular, Ionic y Firebase. Con una base poco habitual, experiencia real en sistemas mainframe de NTT Data.</p>
         <div class="hero-actions">
           <a href="#projects" class="btn btn-primary" data-i18n="hero.cta_projects">Ver proyectos</a>
           <a href="#contact" class="btn btn-outline" data-i18n="hero.cta_contact">Contactar</a>
         </div>
         <div class="hero-socials">
           <a href="https://github.com/n1co2611" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.4 7.86 10.93.57.1.78-.25.78-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.35-3.88-1.35-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.25 3.33.95.1-.74.4-1.25.72-1.53-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.16 1.18a10.9 10.9 0 0 1 5.75 0c2.2-1.49 3.16-1.18 3.16-1.18.62 1.58.23 2.75.11 3.04.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.41-5.25 5.69.41.36.78 1.08.78 2.17 0 1.57-.01 2.83-.01 3.22 0 .3.21.66.79.55A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.4 7.86 10.93.57.1.78-.25.78-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.35-3.88-1.35-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.25 3.33.95.1-.74.4-1.25.72-1.53-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.16 1.18a10.9 10.9 0 0 1 5.75 0c2.2-1.49 3.16-1.18 3.16-1.18.62 1.58.23 2.75.11 3.04.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.41-5.25 5.69.41.36.78 1.08.78 2.17 0 1.57-.01 2.83-.01 3.22 0 .3.21.66.79.55A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
           </a>
           <a href="https://www.linkedin.com/in/nicolashidalgosalinas" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.44-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.11 20.45H3.56V9h3.55v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.44-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.11 20.45H3.56V9h3.55v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>
           </a>
-          <a href="#contact" aria-label="Contacto" data-i18n-aria="nav.contact">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          <a href="#contact" aria-label="Contacto">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
           </a>
         </div>
       </div>
 
-      <figure class="hero-photo animate-hero-photo">
+      <div class="hero-photo animate-hero-photo">
         <div class="photo-frame">
-          <img src="img/perfil.png" alt="Nicolás Hidalgo" fetchpriority="high" decoding="async">
+          <img src="img/perfil.png" alt="Nicolás Hidalgo">
         </div>
-        <figcaption data-i18n="hero.location">Alicante, España</figcaption>
-      </figure>
+      </div>
     </div>
   </section>
 
-  <!-- ============================== ABOUT ============================== -->
-  <section class="section" id="about" aria-labelledby="about-title">
+  <!-- ABOUT -->
+  <section class="section" id="about">
     <div class="section-inner">
       <p class="eyebrow reveal" data-i18n="about.eyebrow">Perfil</p>
-      <h2 class="section-title reveal" id="about-title" data-i18n="about.title">Sobre mí</h2>
+      <h2 class="section-title reveal" data-i18n="about.title">Sobre mí</h2>
       <div class="about-grid">
         <div class="about-copy reveal">
-          <p data-i18n="about.p1">Soy estudiante de último año de Ingeniería Multimedia en la Universidad de Alicante, con un perfil full-stack centrado en aplicaciones web y móviles interactivas.</p>
-          <p data-i18n="about.p2">Trabajo principalmente con Angular, Ionic, Firebase y TypeScript, y lo complemento con experiencia real en sistemas mainframe —COBOL, JCL y DB2— adquirida durante mis prácticas en NTT Data. Esa combinación me da una perspectiva completa del software.</p>
-          <p data-i18n="about.p3">Me interesan la integración de IA en producto, el diseño de interfaces cuidadas y construir proyectos de principio a fin.</p>
+          <p data-i18n="about.p1">Estoy terminando Ingeniería Multimedia en la Universidad de Alicante, tengo todas las asignaturas superadas y solo me queda defender el TFG. Mi perfil es full-stack, centrado en aplicaciones web y móviles interactivas.</p>
+          <p data-i18n="about.p2">Trabajo principalmente con Angular, Ionic, Firebase y TypeScript, y lo complemento con experiencia real en sistemas mainframe COBOL, JCL y DB2 adquirida durante mis prácticas en NTT Data. Esa combinación me da una perspectiva completa del software.</p>
+          <p data-i18n="about.p3">Me interesan la integración de IA en producto, el diseño de interfaces cuidadas y construir proyectos de principio a fin. </p>
         </div>
-        <div class="skills reveal">
-          <div class="skill-group">
-            <h3 class="skill-label" data-i18n="about.skills.frontend">Frontend &amp; Móvil</h3>
-            <ul class="skill-tags" role="list">
-              <li class="tag">Angular</li><li class="tag">Ionic</li><li class="tag">React</li><li class="tag">Vue.js</li>
-            </ul>
+        <div class="hex-grid reveal" aria-label="Tecnologías">
+          <div class="hex-item">
+            <div class="hex-circle"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.931 12.645h4.138l-2.07-4.908m0-7.737L.68 3.982l1.726 14.771L12 24l9.586-5.243 1.728-14.771z" fill="#dd1b16"/><path d="M12 .0L12 24l9.585-5.243 1.728-14.771z" fill="#c3160a"/><path d="M11.998 3.158L7.952 13.2H9.41l.804-2.008h3.572l.803 2.008h1.457zm.001 3.809l1.32 3.124h-2.64z" fill="#fff"/></svg></div>
+            <span>Angular</span>
           </div>
-          <div class="skill-group">
-            <h3 class="skill-label" data-i18n="about.skills.backend">Backend &amp; Datos</h3>
-            <ul class="skill-tags" role="list">
-              <li class="tag">Node.js</li><li class="tag">Firebase</li><li class="tag">MongoDB</li><li class="tag">PL/SQL</li>
-            </ul>
+          <div class="hex-item">
+            <div class="hex-circle"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="11.245" r="1.785" fill="#61dafb"/><path d="M7.002 14.794l-.395-.101c-2.934-.741-4.607-2.017-4.607-3.447s1.673-2.706 4.607-3.447l.395-.101.111.391a28.958 28.958 0 0 0 1.136 3.057 28.964 28.964 0 0 0-1.136 3.057l-.111.391zm.577-6.09c-2.341.623-3.761 1.617-3.761 2.642s1.42 2.019 3.761 2.642a29.742 29.742 0 0 1 1.023-2.642 29.742 29.742 0 0 1-1.023-2.642zm9.419 6.09l-.111-.391a28.964 28.964 0 0 0-1.136-3.057 28.958 28.958 0 0 0 1.136-3.057l.111-.391.395.101c2.934.741 4.607 2.017 4.607 3.447s-1.673 2.706-4.607 3.447l-.395.101zm-.577-6.09a29.742 29.742 0 0 1-1.023 2.642 29.742 29.742 0 0 1 1.023 2.642c2.341-.623 3.761-1.617 3.761-2.642s-1.42-2.019-3.761-2.642zm-9.997 7.439l-.274-.333c-1.832-2.226-2.637-4.316-2.189-5.629.448-1.313 2.411-2.027 5.327-1.968l.407.009-.034.407a29.065 29.065 0 0 0 0 3.24l.034.407-.407.009c-2.916.059-4.879-.655-5.327-1.968l.463-.142zm.736-6.43c-2.328.126-3.766.84-4.004 1.556-.238.715.575 2.21 2.338 3.688a30.39 30.39 0 0 1 .073-2.55 30.39 30.39 0 0 1-.407-2.694zm9.258 6.43l-.463-.142c.448-1.313 2.411-2.027 5.327-1.968l.407.009-.034.407c.023.537.035 1.08.035 1.62s-.012 1.083-.035 1.62l-.034.407-.407.009c-2.916.059-4.879-.655-5.327-1.968zm.736-6.43a30.39 30.39 0 0 1-.407 2.694 30.39 30.39 0 0 1 .073 2.55c1.763-1.478 2.576-2.973 2.338-3.688-.238-.716-1.676-1.43-4.004-1.556zM8.098 16.85l-.111-.391a28.964 28.964 0 0 1-1.136-3.057 28.958 28.958 0 0 1 1.136-3.057l.111-.391.395.101c2.934.741 4.607 2.017 4.607 3.447s-1.673 2.706-4.607 3.447l-.395.101zm.577-6.09a29.742 29.742 0 0 0-1.023 2.642A29.742 29.742 0 0 0 8.675 16.044c2.341-.623 3.761-1.617 3.761-2.642s-1.42-2.019-3.761-2.642z" fill="#61dafb"/></svg></div>
+            <span>React</span>
           </div>
-          <div class="skill-group">
-            <h3 class="skill-label" data-i18n="about.skills.mainframe">Mainframe</h3>
-            <ul class="skill-tags" role="list">
-              <li class="tag">COBOL</li><li class="tag">JCL</li><li class="tag">DB2</li>
-            </ul>
+          <div class="hex-item">
+            <div class="hex-circle"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="3" fill="#3178c6"/><path d="M13.5 15.5v1.6c.4.2.9.4 1.4.5.6.1 1.1.2 1.7.2.6 0 1.1-.1 1.6-.2.5-.1.9-.3 1.3-.6.4-.3.6-.6.8-1 .2-.4.3-.9.3-1.5 0-.4-.1-.8-.2-1.1-.1-.3-.3-.6-.6-.9-.3-.3-.6-.5-1-.7-.4-.2-.8-.4-1.3-.6-.4-.1-.7-.3-1-.4-.3-.1-.5-.3-.7-.4-.2-.1-.3-.3-.4-.4-.1-.2-.1-.3-.1-.5 0-.2 0-.3.1-.5.1-.1.2-.3.3-.3.1-.1.3-.2.5-.2.2-.1.4-.1.6-.1.2 0 .4 0 .6.1.2 0 .4.1.6.2.2.1.4.2.5.3.2.1.3.2.4.3V9.1c-.3-.2-.7-.3-1.1-.4-.4-.1-.9-.1-1.4-.1-.6 0-1.1.1-1.5.2-.5.1-.9.3-1.2.6-.3.3-.6.6-.8 1-.2.4-.3.9-.3 1.4 0 .7.2 1.3.6 1.8.4.5 1 .9 1.8 1.2.4.2.8.3 1.1.5.3.1.6.3.8.4.2.2.4.3.5.5.1.2.2.4.2.6 0 .2 0 .4-.1.5-.1.2-.2.3-.4.4-.2.1-.3.2-.6.2-.2.1-.4.1-.7.1-.5 0-1-.1-1.5-.3-.4-.3-.8-.5-1.1-.8zm-4.3-6.1H6V7.9h9v1.5h-3.2V18h-2.6z" fill="#fff"/></svg></div>
+            <span>TypeScript</span>
           </div>
-          <div class="skill-group">
-            <h3 class="skill-label" data-i18n="about.skills.langs">Lenguajes</h3>
-            <ul class="skill-tags" role="list">
-              <li class="tag">TypeScript</li><li class="tag">JavaScript</li><li class="tag">C#</li><li class="tag">Java</li><li class="tag">PL/SQL</li>
-            </ul>
+          <div class="hex-item">
+            <div class="hex-circle"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm0 21.6A9.6 9.6 0 1 1 12 2.4a9.6 9.6 0 0 1 0 19.2zm3.43-13.693a1.257 1.257 0 1 1-2.514 0 1.257 1.257 0 0 1 2.514 0zM12 7.2a4.8 4.8 0 1 0 0 9.6 4.8 4.8 0 0 0 0-9.6zm0 7.68a2.88 2.88 0 1 1 0-5.76 2.88 2.88 0 0 1 0 5.76z" fill="#3880ff"/></svg></div>
+            <span>Ionic</span>
           </div>
-          <div class="skill-group">
-            <h3 class="skill-label" data-i18n="about.skills.ai">IA &amp; Herramientas</h3>
-            <ul class="skill-tags" role="list">
-              <li class="tag">Dialogflow</li><li class="tag">Git</li><li class="tag">Figma</li>
-            </ul>
+          <div class="hex-item">
+            <div class="hex-circle"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.89 15.672L6.255.461A.542.542 0 0 1 7.27.289L9.613 4.9 3.89 15.672zm16.794 3.692l-2.972-18.15a.54.54 0 0 0-.27-.288.534.534 0 0 0-.38-.044l-2.3.604 6.185 10.898-.263 6.98zM3.89 15.672l7.302 4.213a1.56 1.56 0 0 0 1.524 0l7.968-4.594-11.49-6.577zm10.306-11.77L9.613 4.9l4.583 8.072 4.414-7.784z" fill="#ffca28"/><path d="M3.89 15.672l7.302 4.213a1.56 1.56 0 0 0 1.524 0l7.968-4.594-11.49-6.577z" fill="#ffa000"/></svg></div>
+            <span>Firebase</span>
           </div>
-        </div>
+          <div class="hex-item">
+            <div class="hex-circle"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 21.985c-.275 0-.532-.074-.772-.202l-2.439-1.448c-.365-.203-.182-.277-.072-.314.496-.165.588-.201 1.101-.493.056-.027.129-.015.185.016l1.87 1.108c.073.036.166.036.228 0l7.285-4.207c.073-.036.118-.11.118-.191V7.768c0-.083-.045-.155-.12-.194l-7.283-4.202a.214.214 0 0 0-.227 0L4.59 7.574c-.073.04-.12.113-.12.194v8.408c0 .083.047.154.12.194l1.994 1.152c1.084.541 1.748-.096 1.748-.735V8.733c0-.12.093-.214.214-.214h.922c.118 0 .213.094.213.214v8.054c0 1.435-.785 2.271-2.147 2.271-.421 0-.75 0-1.677-.453l-1.911-1.099A1.54 1.54 0 0 1 3.18 16.18V7.768c0-.554.295-1.066.772-1.344l7.285-4.21a1.592 1.592 0 0 1 1.539 0l7.285 4.21c.478.278.772.79.772 1.344v8.412c0 .554-.294 1.064-.772 1.342l-7.285 4.21a1.524 1.524 0 0 1-.776.253z" fill="#339933"/></svg></div>
+            <span>Node.js</span>
+          </div>
+          <div class="hex-item">
+            <div class="hex-circle"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.193 9.555c-1.264-5.58-4.252-7.414-4.573-8.115-.28-.394-.53-.954-.735-1.44-.036.495-.055.685-.523 1.184-.723.566-4.438 3.682-4.74 10.02-.282 5.912 4.27 9.435 4.888 9.884l.07.05A73.49 73.49 0 0 1 11.91 24h.481c.114-1.032.284-2.056.51-3.07.417-.296.604-.463.85-.693a11.342 11.342 0 0 0 3.639-8.464c.01-.814-.103-1.662-.197-2.218zm-5.336 8.195s0-8.291.275-8.29c.213 0 .49 10.695.49 10.695-.381-.045-.765-1.76-.765-2.405z" fill="#47a248"/></svg></div>
+            <span>MongoDB</span>
+          </div>
+          <div class="hex-item">
+            <div class="hex-circle"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.546 10.93L13.067.452c-.604-.603-1.582-.603-2.188 0L8.708 2.627l2.76 2.76c.645-.215 1.379-.07 1.889.441.516.515.658 1.258.438 1.9l2.658 2.66c.645-.223 1.387-.078 1.9.435.721.72.721 1.884 0 2.604-.719.719-1.881.719-2.6 0-.539-.541-.674-1.337-.404-1.996L12.86 8.955v6.525c.176.086.342.203.488.348.713.721.713 1.883 0 2.6-.719.721-1.889.721-2.609 0-.719-.719-.719-1.879 0-2.598.182-.18.387-.316.605-.406V8.835c-.217-.091-.424-.222-.605-.406-.545-.547-.676-1.342-.396-2.009L7.636 3.7.45 10.881c-.6.605-.6 1.584 0 2.189l10.48 10.477c.604.604 1.582.604 2.186 0l10.43-10.43c.605-.603.605-1.582 0-2.187" fill="#f05032"/></svg></div>
+            <span>Git</span>
+          </div>
+          <div class="hex-item">
+            <div class="hex-circle"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8.851 18.56s-.917.534.653.714c1.902.218 2.874.187 4.969-.211 0 0 .552.346 1.321.646-4.699 2.013-10.633-.118-6.943-1.149zm-.745-3.137s-1.028.761.542.924c2.032.209 3.636.227 6.413-.308 0 0 .384.389.987.602-5.679 1.661-12.007.13-7.942-1.218zm4.84-5.228c1.158 1.333-.304 2.533-.304 2.533s2.939-1.518 1.589-3.418c-1.261-1.772-2.228-2.652 3.007-5.688 0-.001-8.216 2.051-4.292 6.573zm6.538 11.56s.679.559-.747.991c-2.712.822-11.288 1.069-13.669.033-.856-.373.75-.89 1.254-.998.527-.114.828-.093.828-.093-.953-.671-6.156 1.317-2.643 1.887 9.58 1.553 17.462-.7 14.977-1.82zm-8.693-8.894s-4.362 1.036-1.544 1.412c1.189.159 3.561.123 5.77-.062 1.806-.152 3.618-.477 3.618-.477s-.637.272-1.098.587c-4.429 1.165-12.986.623-10.522-.568 2.082-1.006 3.776-.892 3.776-.892zm7.824 7.374c4.503-2.34 2.421-4.589.968-4.285-.355.074-.515.138-.515.138s.132-.207.385-.297c2.875-1.011 5.086 2.981-.928 4.562 0-.001.07-.062.09-.118zM14.401 0s2.494 2.494-2.365 6.33c-3.896 3.077-.888 4.832-.001 6.836-2.274-2.053-3.943-3.858-2.824-5.543 1.646-2.469 6.209-3.666 5.19-7.623zm-4.667 23.924c4.322.277 10.959-.153 11.116-2.198 0 0-.302.775-3.572 1.391-3.688.694-8.239.613-10.937.168 0-.001.553.457 3.393.639z" fill="#007396"/></svg></div>
+            <span>Java</span>
+          </div>
+          <div class="hex-item">
+            <div class="hex-circle"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491zm-4.588 0H6.676c-2.476 0-4.49-2.014-4.49-4.49S4.2 0 6.676 0h4.588v8.981zm0 8.518H6.676c-2.476 0-4.49-2.015-4.49-4.491S4.2 8.517 6.676 8.517h4.588v8.982zm4.588.001c-2.476 0-4.49-2.015-4.49-4.491s2.014-4.491 4.49-4.491 4.49 2.015 4.49 4.491-2.014 4.491-4.49 4.491zm-4.589 4.489c0 2.476-2.014 4.49-4.489 4.49-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h4.489v4.49z" fill="#f24e1e"/></svg></div>
+            <span>Figma</span>
+          </div>
+          <div class="hex-item">
+            <div class="hex-circle"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 22 1 3h6.5L12 10.5 16.5 3H23z" fill="#41B883"/><path d="M12 22 6.75 3h3.25L12 10.5 14 3h3.25z" fill="#35495E"/></svg></div>
+            <span>Vue.js</span>
+          </div>
+          <div class="hex-item">
+            <div class="hex-circle"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="5" fill="#9B4F96"/><text x="12" y="16.5" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#fff" text-anchor="middle">C#</text></svg></div>
+            <span>C#</span>
+          </div>
+          <div class="hex-item">
+            <div class="hex-circle"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C7.58 2 4 3.12 4 4.5v15C4 20.88 7.58 22 12 22s8-1.12 8-2.5v-15C20 3.12 16.42 2 12 2zm0 2c3.87 0 6 .93 6 1.5S15.87 7 12 7 6 6.07 6 5.5 8.13 4 12 4zM6 7.35c1.36.51 3.53.9 6 .9s4.64-.39 6-.9v3.15c0 .57-2.13 1.5-6 1.5s-6-.93-6-1.5V7.35zm0 4.65c1.36.51 3.53.9 6 .9s4.64-.39 6-.9v3.15c0 .57-2.13 1.5-6 1.5s-6-.93-6-1.5V12zm0 4.65c1.36.51 3.53.9 6 .9s4.64-.39 6-.9v2.85c0 .57-2.13 1.5-6 1.5s-6-.93-6-1.5v-2.85z" fill="#F80000"/></svg></div>
+            <span>PL/SQL</span>
+          </div>
+                </div>
       </div>
     </div>
   </section>
 
-  <!-- ============================== EXPERIENCE ============================== -->
-  <section class="section" id="experience" aria-labelledby="experience-title">
+  <!-- EXPERIENCE -->
+  <section class="section" id="experience">
     <div class="section-inner">
       <p class="eyebrow reveal" data-i18n="exp.eyebrow">Trayectoria</p>
-      <h2 class="section-title reveal" id="experience-title" data-i18n="exp.title">Experiencia y formación</h2>
+      <h2 class="section-title reveal" data-i18n="exp.title">Experiencia y formación</h2>
       <div class="exp-list">
         <article class="exp-item reveal">
-          <p class="exp-date" data-i18n="exp.ntt.date">Abr 2026 — Jul 2026</p>
+          <div class="exp-date" data-i18n="exp.ntt.date">Abr 2026 — Jul 2026</div>
           <div class="exp-body">
             <h3 class="exp-role" data-i18n="exp.ntt.role">Prácticas — Sistemas Mainframe</h3>
             <p class="exp-org">NTT Data · Alicante</p>
             <p class="exp-desc" data-i18n="exp.ntt.desc">Desarrollo y mantenimiento de programas COBOL y procesos batch con JCL en un equipo de sistemas, trabajando sobre infraestructura mainframe empresarial.</p>
-            <ul class="tags" role="list"><li class="tag">COBOL</li><li class="tag">JCL</li><li class="tag">Mainframe</li></ul>
+            <div class="tags tags-sm"><span class="tag">COBOL</span><span class="tag">JCL</span><span class="tag">Mainframe</span></div>
           </div>
         </article>
         <article class="exp-item reveal">
-          <p class="exp-date" data-i18n="exp.uni.date">2022 — 2026 (TFG pendiente)</p>
+          <div class="exp-date" data-i18n="exp.uni.date">2022 — 2026</div>
           <div class="exp-body">
             <h3 class="exp-role" data-i18n="exp.uni.role">Grado en Ingeniería Multimedia</h3>
             <p class="exp-org">Universidad de Alicante</p>
-            <p class="exp-desc" data-i18n="exp.uni.desc">Desarrollo web y móvil, entornos gráficos e interactivos, bases de datos y diseño UX/UI. TFG: CarGest, aplicación de gestión de vehículos.</p>
-            <ul class="tags" role="list"><li class="tag">Angular</li><li class="tag">Ionic</li><li class="tag">Firebase</li></ul>
+            <p class="exp-desc" data-i18n="exp.uni.desc">Desarrollo web y móvil, entornos gráficos e interactivos, bases de datos y diseño UX/UI. Todas las asignaturas superadas; pendiente de defender el TFG: CarGest, aplicación de gestión de vehículos.</p>
+            <div class="tags tags-sm"><span class="tag">Angular</span><span class="tag">Ionic</span><span class="tag">Firebase</span></div>
           </div>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- ============================== PROJECTS ============================== -->
-  <section class="section" id="projects" aria-labelledby="projects-title">
+  <!-- PROJECTS -->
+  <section class="section" id="projects">
     <div class="section-inner">
       <p class="eyebrow reveal" data-i18n="proj.eyebrow">Trabajo</p>
-      <h2 class="section-title reveal" id="projects-title" data-i18n="proj.title">Proyectos</h2>
+      <h2 class="section-title reveal" data-i18n="proj.title">Proyectos</h2>
       <p class="section-subtitle reveal" data-i18n="proj.subtitle">Una selección de los proyectos en los que he trabajado.</p>
       <div class="project-grid">
 
         <article class="project-card reveal">
-          <div class="project-img">
-            <img src="img/noma.png" alt="Captura de la interfaz de Noma" data-i18n-alt="proj.noma.alt" loading="lazy" decoding="async">
+          <div class="project-img project-img-noma">
+            <img src="img/noma.png" alt="Noma">
           </div>
           <div class="project-card-body">
-            <div class="project-card-head">
-              <h3>Noma</h3>
-              <span class="status status-live" data-i18n="proj.status.live">Publicado</span>
-            </div>
+            <div class="project-card-head"><h3>Noma</h3><span class="status-pill status-live" data-i18n="proj.status.live">Publicado</span></div>
             <p data-i18n="proj.noma.desc">Plataforma digital para descubrir productos artesanales de proximidad con distintivos de calidad (DO, DOP, IGP), mapa interactivo y asistente conversacional.</p>
-            <ul class="tags" role="list"><li class="tag">JavaScript</li><li class="tag">Three.js</li><li class="tag">Dialogflow</li><li class="tag">SEO</li></ul>
-            <div class="project-card-links"><a href="https://noma.ovh" target="_blank" rel="noopener noreferrer" data-i18n="proj.link.noma">Ver Noma</a></div>
+            <div class="tags tags-sm"><span class="tag">JavaScript</span><span class="tag">Three.js</span><span class="tag">Dialogflow</span><span class="tag">SEO</span></div>
+            <div class="project-card-links"><a href="https://noma.ovh" target="_blank" rel="noopener noreferrer" data-i18n="proj.link.noma">Ver Noma →</a></div>
           </div>
         </article>
 
         <article class="project-card reveal">
-          <div class="project-img">
-            <img src="img/epicbox.png" alt="Captura de la interfaz de EpicBox" data-i18n-alt="proj.epicbox.alt" loading="lazy" decoding="async">
+          <div class="project-img project-img-epicbox">
+            <img src="img/epicbox.png" alt="EpicBox">
           </div>
           <div class="project-card-body">
-            <div class="project-card-head">
-              <h3>EpicBox</h3>
-              <span class="status status-live" data-i18n="proj.status.live">Publicado</span>
-            </div>
+            <div class="project-card-head"><h3>EpicBox</h3><span class="status-pill status-live" data-i18n="proj.status.live">Publicado</span></div>
             <p data-i18n="proj.epicbox.desc">Marketplace de recursos digitales para creadores: modelos 3D y 2D, scripts, packs y efectos. Catálogo por categorías, cuentas de usuario y carrito.</p>
-            <ul class="tags" role="list"><li class="tag">React</li><li class="tag">Node.js</li><li class="tag">MongoDB</li></ul>
-            <div class="project-card-links"><a href="https://github.com/n1co2611/EpicBox" target="_blank" rel="noopener noreferrer" data-i18n="proj.link.github">Ver en GitHub</a></div>
+            <div class="tags tags-sm"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">MongoDB</span></div>
+            <div class="project-card-links"><a href="https://github.com/n1co2611/EpicBox" target="_blank" rel="noopener noreferrer" data-i18n="proj.link.github">Ver en GitHub →</a></div>
           </div>
         </article>
 
         <article class="project-card reveal">
-          <div class="project-img">
-            <img src="img/cargest.png" alt="Captura de la interfaz de CarGest" data-i18n-alt="proj.cargest.alt" loading="lazy" decoding="async">
+          <div class="project-img project-img-cargest">
+            <img src="img/cargest.png" alt="CarGest">
           </div>
           <div class="project-card-body">
-            <div class="project-card-head">
-              <h3>CarGest</h3>
-              <span class="status status-progress" data-i18n="proj.status.progress">En desarrollo</span>
-            </div>
+            <div class="project-card-head"><h3>CarGest</h3><span class="status-pill status-progress" data-i18n="proj.status.progress">En desarrollo</span></div>
             <p data-i18n="proj.cargest.desc">Aplicación móvil para gestionar tu flota de vehículos: ficha de cada coche, documentación y mantenimientos en un mismo lugar. TFG en la Universidad de Alicante.</p>
-            <ul class="tags" role="list"><li class="tag">Ionic</li><li class="tag">Angular</li><li class="tag">Firebase</li></ul>
+            <div class="tags tags-sm"><span class="tag">Ionic</span><span class="tag">Angular</span><span class="tag">Firebase</span></div>
             <div class="project-card-links"><span class="link-disabled" data-i18n="proj.link.soon">Disponible próximamente</span></div>
           </div>
         </article>
@@ -266,10 +233,10 @@
        Oculta hasta que tengas el primer certificado. Para reactivarla:
        1) quita este comentario y el de cierre de abajo
        2) descomenta también los dos enlaces "Certificados" del menú (arriba)
-  <section class="section" id="certificates" aria-labelledby="certificates-title">
+  <section class="section" id="certificates">
     <div class="section-inner">
       <p class="eyebrow reveal" data-i18n="cert.eyebrow">Formación continua</p>
-      <h2 class="section-title reveal" id="certificates-title" data-i18n="cert.title">Certificados</h2>
+      <h2 class="section-title reveal" data-i18n="cert.title">Certificados</h2>
       <div class="empty-state reveal">
         <div class="empty-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/><circle cx="12" cy="8" r="6"/></svg>
@@ -281,14 +248,15 @@
   </section>
   -->
 
-  <!-- ============================== CONTACT ============================== -->
-  <section class="section" id="contact" aria-labelledby="contact-title">
+  <!-- CONTACT -->
+  <section class="section" id="contact">
     <div class="section-inner">
       <p class="eyebrow reveal" data-i18n="contact.eyebrow">Contacto</p>
-      <h2 class="section-title reveal" id="contact-title" data-i18n="contact.title">Hablemos</h2>
+      <h2 class="section-title reveal" data-i18n="contact.title">Hablemos</h2>
       <p class="section-subtitle reveal" data-i18n="contact.subtitle">Estoy abierto a oportunidades y colaboraciones. Puedes escribirme por cualquiera de estos canales.</p>
 
       <div class="contact-layout">
+        <!-- Formulario -->
         <div class="contact-form-wrap reveal">
           <form id="contact-form" action="https://formspree.io/f/mvzjyprd" method="POST" novalidate>
             <div class="form-row">
@@ -309,26 +277,27 @@
               <label for="contact-message" data-i18n="form.message">Mensaje</label>
               <textarea id="contact-message" name="message" rows="5" required data-i18n-placeholder="form.message_ph" placeholder="Cuéntame más..."></textarea>
             </div>
-            <input type="text" name="_gotcha" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
             <button type="submit" class="btn btn-primary btn-submit">
               <span class="btn-label" data-i18n="form.send">Enviar mensaje</span>
-              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2 11 13"/><path d="M22 2 15 22 11 13 2 9l20-7z"/></svg>
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22 11 13 2 9l20-7z"/></svg>
             </button>
-            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+            <p class="form-success" id="form-success" data-i18n="form.success">¡Mensaje enviado! Te responderé pronto.</p>
+            <p class="form-error" id="form-error" data-i18n="form.error">Algo fue mal. Inténtalo de nuevo o escríbeme directamente.</p>
           </form>
         </div>
 
+        <!-- Canales -->
         <div class="contact-side">
           <a class="contact-card reveal" href="mailto:nicolashidalgo2611@gmail.com">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
             <div><p class="contact-card-label">Email</p><p class="contact-card-value">nicolashidalgo2611@gmail.com</p></div>
           </a>
           <a class="contact-card reveal" href="https://www.linkedin.com/in/nicolashidalgosalinas" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.44-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.11 20.45H3.56V9h3.55v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.44-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.11 20.45H3.56V9h3.55v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>
             <div><p class="contact-card-label">LinkedIn</p><p class="contact-card-value">/in/nicolashidalgosalinas</p></div>
           </a>
           <a class="contact-card reveal" href="https://github.com/n1co2611" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.4 7.86 10.93.57.1.78-.25.78-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.35-3.88-1.35-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.25 3.33.95.1-.74.4-1.25.72-1.53-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.16 1.18a10.9 10.9 0 0 1 5.75 0c2.2-1.49 3.16-1.18 3.16-1.18.62 1.58.23 2.75.11 3.04.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.41-5.25 5.69.41.36.78 1.08.78 2.17 0 1.57-.01 2.83-.01 3.22 0 .3.21.66.79.55A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.4 7.86 10.93.57.1.78-.25.78-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.35-3.88-1.35-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.25 3.33.95.1-.74.4-1.25.72-1.53-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.16 1.18a10.9 10.9 0 0 1 5.75 0c2.2-1.49 3.16-1.18 3.16-1.18.62 1.58.23 2.75.11 3.04.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.41-5.25 5.69.41.36.78 1.08.78 2.17 0 1.57-.01 2.83-.01 3.22 0 .3.21.66.79.55A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
             <div><p class="contact-card-label">GitHub</p><p class="contact-card-value">n1co2611</p></div>
           </a>
         </div>
@@ -339,15 +308,9 @@
 </main>
 
 <footer class="footer">
-  <div class="footer-inner">
-    <p class="footer-copy">© <span id="year"></span> Nicolás Hidalgo Salinas</p>
-    <nav class="footer-links" aria-label="Enlaces" data-i18n-aria="a11y.footer">
-      <a href="https://github.com/n1co2611" target="_blank" rel="noopener noreferrer">GitHub</a>
-      <a href="https://www.linkedin.com/in/nicolashidalgosalinas" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      <a href="mailto:nicolashidalgo2611@gmail.com">Email</a>
-    </nav>
-  </div>
+  <p>© <span id="year"></span> Nicolás Hidalgo Salinas</p>
 </footer>
 
+<script src="script.js"></script>
 </body>
 </html>
